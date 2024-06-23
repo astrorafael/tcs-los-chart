@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools >= 45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "raw-plot"
+dynamic = ["version"]
+description = "Tool to Generate TCS Lihe of Sight Charts"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "GPL-3.0-or-later"}
+authors = [
+    {name = "Rafael González", email = "rafael08@ucm.es"},
+    {name = "Jaime Zamorano", email = "jzamoran@ucm.es"},
+]
+classifiers = [
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Other Audience",
+    "License :: OSI Approved :: GNU General Public License (GPL)",
+    "Operating System :: OS Independent",
+    "Topic :: Games/Entertainment :: Turn Based Strategy",
+  
+]
+dependencies = [
+    "matplotlib",
+    "PyQt5",
+    "lica@git+https://github.com/guaix-ucm/lica@main",
+]
+
+
+# To run with pip install -e .[dev] or pip install -e .[test]
+[project.optional-dependencies]
+test = [
+    "pytest>=6",
+]
+dev = [
+   "pytest>=6",
+   "tox",
+]
+
+[project.urls]
+Homepage = "https://github.com/astrorafael/tcs-los-chart"
+Repository = "https://github.com/guaix-ucm/tcs-los-chart.git"
+
+[project.scripts]
+chart = "tcs.grid:main"
+
+
+[tool.setuptools]
+#script-files = ["scripts/photo.sh",]
+
+# pyproject.toml
+[tool.setuptools_scm]
+write_to = "src/tcs/_version.py"
+
+[tool.setuptools.packages.find]
+# scanning for namespace packages is true by default in pyproject.toml, so
+# you do NOT need to include the following line.
+namespaces = true
+where = ["src"]
+
+[tool.setuptools.package-data]
+"rawplot.resources" = ["*.csv", "*.mplstyle"]

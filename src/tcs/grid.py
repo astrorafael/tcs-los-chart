@@ -57,6 +57,9 @@ def plot_grid(axes, x0, x1, xd, z0, z1, zd, xlabel, ylabel):
     # Minor gridline
     axes.set_xticks(np.arange(x0, x1+1, 1), minor=True)
     axes.set_yticks(np.arange(z0, z1+1, zd//2), minor=True)
+
+    axes.set_xlim([x0, x1])
+    axes.set_ylim([z0, z1])
     axes.minorticks_on()
 
 

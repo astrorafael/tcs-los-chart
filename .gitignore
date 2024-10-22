@@ -167,6 +167,6 @@ cython_debug/
 *.fit
 *.fits
 *.fts
-src/rawplot/_version.py
+_version.py
 images/
 dataset/

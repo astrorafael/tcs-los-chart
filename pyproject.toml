@@ -3,15 +3,14 @@ requires = ["setuptools >= 45", "wheel", "setuptools_scm[toml]>=6.2"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "raw-plot"
+name = "tcs-los-chart"
 dynamic = ["version"]
 description = "Tool to Generate TCS Line of Sight Grid Charts"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "GPL-3.0-or-later"}
 authors = [
-    {name = "Rafael González", email = "rafael08@ucm.es"},
-    {name = "Jaime Zamorano", email = "jzamoran@ucm.es"},
+    {name = "Rafael González", email = "astrorafael@gmail.com"},
 ]
 classifiers = [
     "Programming Language :: Python :: 3.10",
